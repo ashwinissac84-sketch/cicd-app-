@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  app:
+    image: ashwinissac0308/cicd-app:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
