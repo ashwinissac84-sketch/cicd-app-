@@ -28,12 +28,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/cicd-app:latest
-
+  uses: docker/build-push-action@v5
+  with:
+    context: .
+    push: true
+    tags: ashwinissac0308/cicd-app:latest
       - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.3
         with:
